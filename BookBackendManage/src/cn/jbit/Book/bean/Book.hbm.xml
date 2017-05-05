@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="cn.jbit.Book.bean">
+	<class name="Book" table="book_info">
+		<!-- 图书ID -->
+		<id name="bookId" type="integer">
+			<column name="bookId" />
+			<generator class="native" />
+		</id>
+		<!-- 图书编号 -->
+		<property name="bookCde" type="string">
+			<column name="bookCde"  not-null="true" />
+		</property>
+		<!-- 图书名称 -->
+		<property name="bookName" type="string">
+			<column name="bookName" not-null="true" />
+		</property>
+		<!-- 图书类型 -->
+		<property name="bookType" type="integer">
+			<column name="bookType" not-null="true"/>
+		</property>
+		<!-- 图书作者 -->
+		<property name="bookAuthor" type="string">
+			<column name="bookAuthor" not-null="true" />
+		</property>
+		<!-- 出版社 -->
+		<property name="publishPress" type="string">
+			<column name="publishPress" not-null="true" />
+		</property>
+		
+		<!-- 是否节约 1、已借阅  0、未借阅 -->
+		<property name="borrowed" type="integer">
+			<column name="borrowed" not-null="true" />
+		</property>
+		<!-- 创建人 -->
+		<property name="createdBy" type="string">
+			<column name="createdBy" not-null="true" />
+		</property>
+		<!-- 创建时间 -->
+		<property name="creationTime" type="date">
+			<column name="creationTime" not-null="true" />
+		</property>
+		<!-- 最新更新时间 -->
+		<property name="lastUpdatetime" type="date">
+			<column name="lastUpdatetime"  />
+		</property>
+	</class>
+</hibernate-mapping>
